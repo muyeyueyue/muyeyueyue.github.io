@@ -45,7 +45,7 @@
         content="2022-08-23">
       <meta 
         property="og:article:modified_time" 
-        content="2022-08-23">
+        content="2022-08-24">
       <meta 
         property="og:article:author" 
         content="MuYue">
@@ -289,7 +289,7 @@
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>12</span>
+    <span>13</span>
     <span>文章</span>
   </a>
   <a 
@@ -436,7 +436,7 @@
     
     
       <span class="dot"></span>
-      <span>393 字</span>
+      <span>915 字</span>
     
   </div>
   
@@ -482,13 +482,61 @@
 </li>
 <li><p><strong>GPIO</strong> (general purpose intput output )</p>
 <ol>
-<li>是<strong>通用输入输出端口</strong>的简称，可以通过软件来控制其输入和输出。STM32芯片的GPIO引脚与外部设备连接起来，从而实现与外部通讯、控制以及数据采集的功能。</li>
-<li>GPIO接口至少有两个寄存器，即“<strong>通用IO控制寄存器</strong>”与“<strong>通用IO数据寄存器</strong>”。</li>
+<li><p>是<strong>通用输入输出端口</strong>的简称，可以通过软件来控制其输入和输出。STM32芯片的GPIO引脚与外部设备连接起来，<em>从而实现与外部通讯、控制以及数据采集的功能。</em></p>
+</li>
+<li><p>GPIO接口至少有两个寄存器，即“<strong>通用IO控制寄存器</strong>”与“<strong>通用IO数据寄存器</strong>”。</p>
+</li>
+<li><p>可以配置8种输入输出模式</p>
+</li>
+<li><p>引脚电平：0V-3.3V</p>
+</li>
+<li><p><em><strong>输出模式</strong></em>下可控制<strong>端口输出高低电平</strong>，用以驱动LED、控制蜂鸣器、模拟通信协议输出时序</p>
+</li>
+<li><p><em><strong>输入模式</strong></em>下可以读取端口的高低电平或电压，用于读取按键输入，外接模块电平信号输入，ADC电压采集，模拟通信协议接受数据等</p>
+</li>
+<li><p><img src="/../images/GPIO%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84.png" alt="GPIO基本结构" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/GPIO%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84.png" class="lozad post-image"></p>
+</li>
+<li><p>每个GPIO外设总共有<strong>16个引脚</strong>，编号是从0到15，PA0-PA15</p>
+</li>
+<li><p>1代表高电平，0代表低电平，输入和读取同高低</p>
+</li>
+<li><p><img src="/../images/GPIO%E4%BD%8D%E7%BB%93%E6%9E%84.png" alt="GPIO位结构" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/GPIO%E4%BD%8D%E7%BB%93%E6%9E%84.png" class="lozad post-image"></p>
+</li>
+<li><p>输入部分：VDD接３.３V　　Vｓｓ接０V　　两个二极管的主要作用是保护电路</p>
+</li>
+<li><p>上拉输入模式：上面导通　下面断开　默认为<strong>高电平</strong>的输入模式</p>
+<p>下拉输入模式：下面导通　上面断开　默认为<strong>低电平</strong>的输入模式</p>
+<p>浮空输入模式：两个都断开</p>
+</li>
+<li><p>上拉电阻和下拉电阻的阻值都很大，目的是<strong>尽量不影响正常的输入操作</strong></p>
+</li>
+<li><p>施密特触发器：<strong>对输入电压进行整形</strong>　如果输入电压大于某一阈值，输出就会瞬间升为高电平　如果输入电压小于某一阈值，输出就会瞬间降为低电平</p>
+</li>
+<li><p>P-MOS  N-MOS　是一种导通开关</p>
+</li>
+<li><p><em><strong>推挽模式输出</strong></em>：　两种均有效</p>
+</li>
+<li><p><em><strong>强推挽输出模式</strong></em>：数据寄存器<strong>为１</strong>时，上管导通，下管断开，输出直接<strong>到VDD，输出高电平</strong>　</p>
+</li>
+<li><p><em><strong>开漏模式输出</strong></em>：数据寄存器<strong>为０</strong>时，上管断开，下管导通，输出直接<strong>到VSS，输出低电平</strong></p>
+</li>
+<li><p><strong>开漏模式</strong>可以作为通信协议的驱动方式，比如IIC通信的引脚，就是使用的开漏模式。在多机通信的情况下，该模式还可以避免各个设备的相互干扰。<strong>开漏模式还可以用于5V的电平信号</strong></p>
+</li>
+<li><p>输入</p>
+</li>
 </ol>
+<hr>
 </li>
 <li><p><img src="/../images/%E7%89%87%E4%B8%8A%E8%B5%84%E6%BA%90.png" alt="片上资源" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/%E7%89%87%E4%B8%8A%E8%B5%84%E6%BA%90.png" class="lozad post-image"></p>
 </li>
+<li><p>开发方式</p>
+</li>
 </ul>
+<ol>
+<li>基于标准库（库函数的方式）</li>
+<li>基于HAL库的方式（图形化界面）</li>
+<li>基于寄存器方式</li>
+</ol>
 
   </div>
   <div>
@@ -496,6 +544,20 @@
   </div>
 </article>
 <div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/2022/08/23/51%E5%8D%95%E7%89%87%E6%9C%BA/" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">51单片机 </div>
+          
+        </div>
+      </a>
+    </div>
   
   
     <div class="nav-item-next">
@@ -560,6 +622,11 @@
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-08-23</div>
+        <a href="/2022/08/23/51%E5%8D%95%E7%89%87%E6%9C%BA/"><div class="recent-posts-item-content">51单片机</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-08-23</div>
         <a href="/2022/08/23/STM32/"><div class="recent-posts-item-content">STM32</div></a>
       </div>
     
@@ -571,11 +638,6 @@
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-08-07</div>
         <a href="/2022/08/07/%E7%94%B5%E8%84%91%E5%AD%A6%E4%B9%A0/"><div class="recent-posts-item-content">电脑学习</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-07-22</div>
-        <a href="/2022/07/22/%E8%A1%8C%E6%B5%8B%E5%88%A4%E6%96%AD/"><div class="recent-posts-item-content">行测判断</div></a>
       </div>
     
   </div>
