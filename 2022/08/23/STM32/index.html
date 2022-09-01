@@ -45,7 +45,7 @@
         content="2022-08-23">
       <meta 
         property="og:article:modified_time" 
-        content="2022-08-25">
+        content="2022-09-01">
       <meta 
         property="og:article:author" 
         content="MuYue">
@@ -318,7 +318,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STM32"><span class="toc-number">1.</span> <span class="toc-text">STM32</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSTM32"><span class="toc-number">1.1.</span> <span class="toc-text">什么是STM32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="toc-number">1.2.</span> <span class="toc-text">串口通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text">串口协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#USART%E5%A4%96%E8%AE%BE"><span class="toc-number">1.2.2.</span> <span class="toc-text">USART外设</span></a></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STM32"><span class="toc-number">1.</span> <span class="toc-text">STM32</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSTM32"><span class="toc-number">1.1.</span> <span class="toc-text">什么是STM32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="toc-number">1.2.</span> <span class="toc-text">串口通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text">串口协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#USART%E5%A4%96%E8%AE%BE"><span class="toc-number">1.2.2.</span> <span class="toc-text">USART外设</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.3.</span> <span class="toc-text">中断系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STM32%E5%BA%93%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">STM32库函数</span></a></li></ol></li></ol>
       </div>
     </article>
   
@@ -332,6 +332,13 @@
     </i>分类
   </div>
   <div class="categories-list">
+    
+      <a href="/categories/STM32/">
+        <div class="categories-list-item">
+          STM32
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
     
       <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/">
         <div class="categories-list-item">
@@ -347,10 +354,10 @@
         </div>
       </a>
     
-      <a href="/categories/%E8%AE%A1%E7%BB%84/">
+      <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%B9%A0/">
         <div class="categories-list-item">
-          计组
-          <span class="categories-list-item-badge">1</span>
+          计算机学习
+          <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
@@ -361,16 +368,9 @@
         </div>
       </a>
     
-      <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%B9%A0/">
+      <a href="/categories/%E8%AE%A1%E7%BB%84/">
         <div class="categories-list-item">
-          计算机学习
-          <span class="categories-list-item-badge">2</span>
-        </div>
-      </a>
-    
-      <a href="/categories/STM32/">
-        <div class="categories-list-item">
-          STM32
+          计组
           <span class="categories-list-item-badge">1</span>
         </div>
       </a>
@@ -436,7 +436,7 @@
     
     
       <span class="dot"></span>
-      <span>1.3k 字</span>
+      <span>1.6k 字</span>
     
   </div>
   
@@ -585,7 +585,15 @@
 <h3 id="USART外设"><a href="#USART外设" class="headerlink" title="USART外设"></a>USART外设</h3><p>通用同步&#x2F;异步收发器</p>
 <p><img src="/../images/USART%E7%AE%80%E4%BB%8B.png" alt="USART简介" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/USART%E7%AE%80%E4%BB%8B.png" class="lozad post-image"></p>
 <p>一般选用<strong>停止位长度为1</strong></p>
-
+<h3 id="中断系统"><a href="#中断系统" class="headerlink" title="中断系统"></a>中断系统</h3><ul>
+<li><em><strong>中断</strong></em>：在主程序运行过程中，出现了特定的中断触发条件（中断源），使得CPU<strong>暂停当前正在运行的程序</strong>，转而去处理中断程序，<strong>处理完成后又返回原来被暂停的位置继续运行</strong>。</li>
+<li>使用中断系统能够 极大的提高程序的效率</li>
+<li><em><strong>中断优先级</strong></em>：当有多个中断源同时申请中断时，CPU会根据中断源的轻重缓急进行裁决，<strong>优先响应更加紧急的中断源</strong></li>
+<li><em><strong>中断嵌套</strong></em>：当中断程序正在运行时，又有新的更高优先级的中断资源申请中断，CPU<strong>再次暂停当前中断程序</strong>，转而去处理新的中断程序，<strong>处理完成后依次进行返回</strong>。</li>
+<li><img src="/../images/%E4%B8%AD%E6%96%AD%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.png" alt="中断执行流程" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/%E4%B8%AD%E6%96%AD%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.png" class="lozad post-image"></li>
+<li>STM32中断：</li>
+</ul>
+<h2 id="STM32库函数"><a href="#STM32库函数" class="headerlink" title="STM32库函数"></a>STM32库函数</h2>
   </div>
   <div>
     
@@ -640,7 +648,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STM32"><span class="toc-number">1.</span> <span class="toc-text">STM32</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSTM32"><span class="toc-number">1.1.</span> <span class="toc-text">什么是STM32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="toc-number">1.2.</span> <span class="toc-text">串口通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text">串口协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#USART%E5%A4%96%E8%AE%BE"><span class="toc-number">1.2.2.</span> <span class="toc-text">USART外设</span></a></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STM32"><span class="toc-number">1.</span> <span class="toc-text">STM32</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSTM32"><span class="toc-number">1.1.</span> <span class="toc-text">什么是STM32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="toc-number">1.2.</span> <span class="toc-text">串口通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text">串口协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#USART%E5%A4%96%E8%AE%BE"><span class="toc-number">1.2.2.</span> <span class="toc-text">USART外设</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.3.</span> <span class="toc-text">中断系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STM32%E5%BA%93%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">STM32库函数</span></a></li></ol></li></ol>
 </div>
             </main>
             <aside class="right-column">
@@ -654,7 +662,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STM32"><span class="toc-number">1.</span> <span class="toc-text">STM32</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSTM32"><span class="toc-number">1.1.</span> <span class="toc-text">什么是STM32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="toc-number">1.2.</span> <span class="toc-text">串口通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text">串口协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#USART%E5%A4%96%E8%AE%BE"><span class="toc-number">1.2.2.</span> <span class="toc-text">USART外设</span></a></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STM32"><span class="toc-number">1.</span> <span class="toc-text">STM32</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSTM32"><span class="toc-number">1.1.</span> <span class="toc-text">什么是STM32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="toc-number">1.2.</span> <span class="toc-text">串口通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text">串口协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#USART%E5%A4%96%E8%AE%BE"><span class="toc-number">1.2.2.</span> <span class="toc-text">USART外设</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.3.</span> <span class="toc-text">中断系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STM32%E5%BA%93%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">STM32库函数</span></a></li></ol></li></ol>
     </article>
   
   
