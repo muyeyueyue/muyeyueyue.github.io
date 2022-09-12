@@ -45,7 +45,7 @@
         content="2022-07-13">
       <meta 
         property="og:article:modified_time" 
-        content="2022-09-03">
+        content="2022-09-12">
       <meta 
         property="og:article:author" 
         content="MuYue">
@@ -340,7 +340,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#EXIT%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD"><span class="toc-number">1.</span> <span class="toc-text">EXIT外部中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TIM%E5%AE%9A%E6%97%B6%E5%99%A8-Timer"><span class="toc-number">2.</span> <span class="toc-text">TIM定时器(Timer)</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#EXIT%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD"><span class="toc-number">1.</span> <span class="toc-text">EXIT外部中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TIM%E5%AE%9A%E6%97%B6%E5%99%A8-Timer"><span class="toc-number">2.</span> <span class="toc-text">TIM定时器(Timer)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80"><span class="toc-number">3.</span> <span class="toc-text">C语言基础</span></a></li></ol>
       </div>
     </article>
   
@@ -455,7 +455,7 @@
     
     
       <span class="dot"></span>
-      <span>444 字</span>
+      <span>970 字</span>
     
   </div>
   
@@ -563,7 +563,7 @@
 </thead>
 </table>
 <p>代码</p>
-<pre class="highlight"><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;This is a C program.\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;This is a C program.\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
 
 <table>
 <thead>
@@ -577,7 +577,7 @@
 <p>超链接元素</p>
 <p>行内式</p>
 <p><a target="_blank" rel="noopener" href="http://www.baidu.com/">百度</a></p>
-<pre class="highlight"><span class="line">[百度](http://www.baidu.com)</span><br></pre>
+<pre class="highlight"><code class="hljs plaintext">[百度](http://www.baidu.com)<br></code></pre>
 
 <p>参考式</p>
 <h2 id="EXIT外部中断"><a href="#EXIT外部中断" class="headerlink" title="EXIT外部中断"></a>EXIT外部中断</h2><ol>
@@ -589,7 +589,57 @@
 </li>
 <li></li>
 </ol>
-<h2 id="TIM定时器-Timer"><a href="#TIM定时器-Timer" class="headerlink" title="TIM定时器(Timer)"></a>TIM定时器(Timer)</h2>
+<h2 id="TIM定时器-Timer"><a href="#TIM定时器-Timer" class="headerlink" title="TIM定时器(Timer)"></a>TIM定时器(Timer)</h2><h2 id="C语言基础"><a href="#C语言基础" class="headerlink" title="C语言基础"></a>C语言基础</h2><ul>
+<li>面向过程编程语言，性能比面向对象高，因为类调用时需要实例化，开销比较大，比较消耗资源;比如单片机、嵌入式开发、 Linux&#x2F;Unix等一般采用面向过程开发，性能是最重要的因素。</li>
+<li>编译性语言，效率高，灵活性高，可移植性高。</li>
+<li>第一个程序</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello World\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;  <br>&#125;<br></code></pre>
+
+<ul>
+<li>打印——-输出</li>
+<li>printf 格式化输出函数  打印文本到屏幕上</li>
+<li>什么是变量？</li>
+<li>确定目标和储存的空间  </li>
+<li>变量名：变量名只能是英文字母和数字或者下划线组成，第一个必须是字母或者下划线开头，变量名区分大小写，不能使用关键字符。</li>
+<li>声明变量的类型，int ,char,float,double </li>
+<li>变量和常量 </li>
+<li>定义符号常量</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> URL <span class="hljs-string">&quot;https://muyeyueyue.github.io/&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> NAME <span class="hljs-string">&quot;muyeyue&quot;</span></span><br></code></pre>
+
+<ul>
+<li>字符串常量</li>
+<li>字符 ‘F’   ‘D’   ‘A’   ‘B’</li>
+<li>字符串 “Hello  World!”   在每一个字符串后<strong>编译器会自动加上一个”\0”表示字符串结束</strong>  特殊的转义字符</li>
+<li>数据类型：整数类型int，浮点数类型float double，字符类型char，布尔类型_Bool 用于判断真或者假，枚举类型</li>
+<li>数组类型，结构类型，联合类型</li>
+<li>sizeof运算符：用于获得数据类型或表达式的长度</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;int = %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>));<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;short int = %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">short</span>));<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;_Bool =%d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">_Bool</span>));<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <br>&#125;<br></code></pre>
+
+<ul>
+<li><p>signed 带符号位的整型和unsigned 不带   </p>
+</li>
+<li><p>signed第一位是符号位 0是正数 1是负数 </p>
+</li>
+<li><p>补码</p>
+</li>
+<li><p>7变-7 的方法 </p>
+<p><img src="/../images/%E8%A1%A5%E7%A0%81.png" alt="补码" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/%E8%A1%A5%E7%A0%81.png" class="lozad post-image"></p>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;math.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> result = <span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>,<span class="hljs-number">32</span>)- <span class="hljs-number">1</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;result = %u\n&quot;</span>,result);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+</li>
+<li><p>字符和字符串</p>
+</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>	<span class="hljs-type">char</span> a = <span class="hljs-string">&#x27;C&#x27;</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c = %d\n&quot;</span>,a,a);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+
+<ul>
+<li><p>ASCII字符表 7位二进制数来表示所有的大写和小写字符 ，数字0到9，还有一些特殊控制字符。</p>
+</li>
+<li></li>
+</ul>
+
   </div>
   <div>
     
@@ -644,7 +694,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#EXIT%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD"><span class="toc-number">1.</span> <span class="toc-text">EXIT外部中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TIM%E5%AE%9A%E6%97%B6%E5%99%A8-Timer"><span class="toc-number">2.</span> <span class="toc-text">TIM定时器(Timer)</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#EXIT%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD"><span class="toc-number">1.</span> <span class="toc-text">EXIT外部中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TIM%E5%AE%9A%E6%97%B6%E5%99%A8-Timer"><span class="toc-number">2.</span> <span class="toc-text">TIM定时器(Timer)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80"><span class="toc-number">3.</span> <span class="toc-text">C语言基础</span></a></li></ol>
 </div>
             </main>
             <aside class="right-column">
@@ -658,7 +708,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#EXIT%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD"><span class="toc-number">1.</span> <span class="toc-text">EXIT外部中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TIM%E5%AE%9A%E6%97%B6%E5%99%A8-Timer"><span class="toc-number">2.</span> <span class="toc-text">TIM定时器(Timer)</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#EXIT%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD"><span class="toc-number">1.</span> <span class="toc-text">EXIT外部中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TIM%E5%AE%9A%E6%97%B6%E5%99%A8-Timer"><span class="toc-number">2.</span> <span class="toc-text">TIM定时器(Timer)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80"><span class="toc-number">3.</span> <span class="toc-text">C语言基础</span></a></li></ol>
     </article>
   
   
