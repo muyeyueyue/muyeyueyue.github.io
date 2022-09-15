@@ -45,7 +45,7 @@
         content="2022-07-13">
       <meta 
         property="og:article:modified_time" 
-        content="2022-09-12">
+        content="2022-09-15">
       <meta 
         property="og:article:author" 
         content="MuYue">
@@ -455,7 +455,7 @@
     
     
       <span class="dot"></span>
-      <span>2.4k 字</span>
+      <span>4.2k 字</span>
     
   </div>
   
@@ -750,6 +750,168 @@
 <li>for语句的灵活应用</li>
 </ul>
 <p><img src="/../images/%E7%81%B5%E6%B4%BB%E7%9A%84for%E8%AF%AD%E5%8F%A5.png" alt="灵活的for语句" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/%E7%81%B5%E6%B4%BB%E7%9A%84for%E8%AF%AD%E5%8F%A5.png" class="lozad post-image"></p>
+  <pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//for语句的灵活应用</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>,j=<span class="hljs-number">20</span>;i&lt;j;i++,j--)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;第%d个\n&quot;</span>,i);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+
+<ul>
+<li><p>循环嵌套</p>
+</li>
+<li><p>先执行内层循环 再执行外层循环</p>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//9X9乘法表</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> i,j;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">9</span>;i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=i;j++)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d*%d= %-2d&quot;</span>,i,j,i*j);<br>        &#125;<br>        <span class="hljs-built_in">putchar</span>(<span class="hljs-string">&#x27;\n&#x27;</span>);<br>    &#125;<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+</li>
+<li><p>break语句</p>
+</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//判断一个数是否为素数 break语句升级版</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> i, num;<br>    <span class="hljs-type">_Bool</span> flag =<span class="hljs-number">1</span>;<br>    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;请输入一个整数：&quot;</span>);<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lld&quot;</span>,&amp;num);<br>    <br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">2</span>;i&lt; num/<span class="hljs-number">2</span>;i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(num % i == <span class="hljs-number">0</span>)<br>        &#123;<br>            flag =<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(flag)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld是一个素数！\n&quot;</span>,num);<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld不是一个素数！\n&quot;</span>,num);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;i=%lld\n&quot;</span>,i);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+
+<ul>
+<li><p>break例子</p>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//break 只能跳出当前循环</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;	<br>    <span class="hljs-type">int</span> i,j;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">10</span>;j++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(j == <span class="hljs-number">3</span>)<br>            &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;    <br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;i=%d, j=%d\n&quot;</span>,i,j);<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+</li>
+<li><p>continue语句</p>
+</li>
+<li><p><strong>跳过本次循环体中余下尚未执行的语句</strong>，立即进行下一次的循环条件判定，可以理解为仅<strong>结束本次循环</strong>。</p>
+</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//用户输入检测 并消除对应的字符</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> ch;<br>    <span class="hljs-keyword">while</span>((ch = getchar()) != <span class="hljs-string">&#x27;\n&#x27;</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (ch == <span class="hljs-string">&#x27;C&#x27;</span>)<br>        &#123;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        <span class="hljs-built_in">putchar</span>(ch);<br>    &#125;<br>    <span class="hljs-built_in">putchar</span>(<span class="hljs-string">&#x27;\n&#x27;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+
+<ul>
+<li>赋值运算符：左边必须是一个变量 </li>
+<li>a&#x3D;a+1 &#x3D;&#x3D; a + &#x3D;1</li>
+<li>a&#x3D; a-2 &#x3D;&#x3D; a- &#x3D;1</li>
+<li>自增自减运算符</li>
+<li>i&#x3D;i+1 &#x3D;&#x3D; i++  &#x3D;&#x3D;  ++i</li>
+<li>i&#x3D;i-1 &#x3D;&#x3D; i–  &#x3D;&#x3D; –i</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th align="left">&#96;&#96;&#96;</th>
+</tr>
+</thead>
+</table>
+<p>- </p>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//区别 i++ 和 ++i</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> i =<span class="hljs-number">5</span>, j;<br>    <br>    j = ++i;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;i = %d, j = %d \n&quot;</span>,i ,j);<br>    <br>    i=<span class="hljs-number">5</span>;<br>    j= i++;<br>  	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;i=%d, j= %d\n&quot;</span>,i,j);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+
+<ul>
+<li>++i的效率更高</li>
+<li>j&#x3D; i++; 相当于先把i赋值给j 然后再加1</li>
+<li>逗号运算符：<strong>int i&#x3D;1,j&#x3D;2,k&#x3D;3;</strong></li>
+</ul>
+<p>语法：<em>表达式1，表达式2，。。。。。。。表达式N</em></p>
+<ul>
+<li>只要有逗号运算符 表达式都是从左到右计算的</li>
+<li>条件运算符：</li>
+</ul>
+<p><img src="/../images/%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt="条件运算符" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6.png" class="lozad post-image"></p>
+<ul>
+<li><p>goto语句</p>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//goto语句的用法</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> i=<span class="hljs-number">5</span>;<br>    <span class="hljs-keyword">while</span>(i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(i&gt;<span class="hljs-number">10</span>)<br>        &#123;<br>            <span class="hljs-keyword">goto</span> A;<br>        &#125;<br>    &#125;<br>A:	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Here, i = %d\n&quot;</span>,i);<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+</li>
+<li><p><strong>数组</strong></p>
+</li>
+<li><p>类型 数组名[元素个数]</p>
+</li>
+<li><p>例子： int a[6];     char b[5];       double c[3];</p>
+</li>
+<li><p>数组不能被动态定义</p>
+</li>
+</ul>
+<p><img src="/../images/%E8%AE%BF%E9%97%AE%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0.png" alt="访问数组中的元素" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/%E8%AE%BF%E9%97%AE%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0.png" class="lozad post-image"></p>
+<ul>
+<li>循环和数组的关系</li>
+<li>通常使用循环来访问数组：</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-type">int</span> a[<span class="hljs-number">10</span>]<br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)<br>&#123;<br>    a[i]= i;<br>&#125;<br></code></pre>
+
+<ul>
+<li>数组的经典应用</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//用数组完成统计所有人的成绩 并取平均数</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> NUM 10</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br><br>    <span class="hljs-type">int</span> s[NUM];<br>    <span class="hljs-type">int</span> i, sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;请输入第%i位同学的成绩：&quot;</span>,i+<span class="hljs-number">1</span>);<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;s[i]);<br>        sum+= s[i];<br><br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;成绩录入完毕，这次考试的平均分是：%.2f&quot;</span>,(<span class="hljs-type">double</span>)sum/NUM);<br><br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre>
+
+<ul>
+<li><p>数组的初始化 可以定义特定的值给数组</p>
+</li>
+<li><p>例子： int a[]&#x3D;{1,2,3,4,5,6};</p>
+</li>
+<li><p>int a[10]&#x3D;{[3]&#x3D;5,[6]&#x3D;6,[7]&#x3D;8};</p>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//给第3，6，7位分别赋值5，6，8 其它值系统默认为0</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> i;<br>    <span class="hljs-type">int</span> a[<span class="hljs-number">10</span>]=&#123;[<span class="hljs-number">3</span>]=<span class="hljs-number">5</span>,[<span class="hljs-number">6</span>]=<span class="hljs-number">6</span>,[<span class="hljs-number">7</span>]=<span class="hljs-number">8</span>&#125;;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,a[i]);<br>    &#125;<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+</li>
+<li><p>字符串处理函数</p>
+</li>
+<li><p><img src="/../images/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84.png" alt="字符数组" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84.png" class="lozad post-image"></p>
+</li>
+<li><p>字符串处理函数</p>
+</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span><span class="hljs-comment">//字符串处理函数头文件</span></span><br><span class="hljs-comment">//sizeof str取的是数组总长度 多一个&#x27;\0&#x27;</span><br><span class="hljs-comment">//strlen str 取的是数组长度</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">char</span> str[] = <span class="hljs-string">&quot;I love Stm32 very much!&quot;</span>;<br><br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;sizeof str = %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(str));<br>    	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;strlen str = %u\n&quot;</span>,<span class="hljs-built_in">strlen</span>(str));<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre>
+
+<ul>
+<li>获取字符串的长度：strlen str</li>
+<li>拷贝字符串： strcpy  和  strncpy</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span><span class="hljs-comment">//字符串处理函数头文件</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">char</span> str1[] = <span class="hljs-string">&quot;Original String&quot;</span>;<br>    <span class="hljs-type">char</span> str2[] = <span class="hljs-string">&quot;New String&quot;</span>;<br>    <span class="hljs-type">char</span> str3[<span class="hljs-number">100</span>];<br>    <br>    <span class="hljs-built_in">strcpy</span>(str1,str2);<br>    <span class="hljs-comment">//将2号位覆盖到1号位 注意：被覆盖的长度一定要比原来的长</span><br>    <span class="hljs-built_in">strcpy</span>(str3,<span class="hljs-string">&quot;Copy Successful&quot;</span>);<br>    <span class="hljs-comment">//将Copy Successful覆盖到数组3中</span><br>    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;str1: %s\n&quot;</span>,str1);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;str2: %s\n&quot;</span>,str2);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;str3: %s\n&quot;</span>,str3);<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+
+<ul>
+<li>strncpy函数</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-comment">//strncpy函数的使用</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">char</span> str1[]= <span class="hljs-string">&quot;To be or not to be &quot;</span>;<br>    <span class="hljs-type">char</span> str2[<span class="hljs-number">40</span>];<br>    <br>    <span class="hljs-built_in">strncpy</span>(str2,str1,<span class="hljs-number">5</span>);<span class="hljs-comment">//将str1中的前五个字符覆盖到str2中</span><br>    <span class="hljs-comment">//不含有&#x27;\0&#x27;结束字符</span><br>    str2[<span class="hljs-number">5</span>] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br>    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;str2: %s\n&quot;</span>,str2);<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+
+<ul>
+<li>连接字符串：strcat和strncat</li>
+<li></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th align="left">&#96;&#96;&#96;</th>
+</tr>
+</thead>
+</table>
+  <pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-comment">// 字符串连接函数使用方法 strcat </span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">char</span> str1[] = <span class="hljs-string">&quot;I love mu&quot;</span>;<br>    <span class="hljs-type">char</span> str2[] = <span class="hljs-string">&quot;I love yue&quot;</span>;<br><br>    <span class="hljs-built_in">strcat</span>(str1,<span class="hljs-string">&quot; &quot;</span>);<span class="hljs-comment">// 将空格符连接在str1后面</span><br>    <span class="hljs-built_in">strcat</span>(str1,str2);<span class="hljs-comment">//将str2连接在str1后面</span><br><br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;str1: %s\n&quot;</span>,str1);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre>
+
+<ul>
+<li>比较字符串 ：strcmp和strncmp</li>
+<li>使用方法：strcmp(str1,str2)       返回值为0 则两个字符串相等</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-comment">//strcmp字符串对比函数使用方法</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">char</span> str1[] = <span class="hljs-string">&quot; I love Yue&quot;</span>;<br>    <span class="hljs-type">char</span> str2[] = <span class="hljs-string">&quot; I love Yue&quot;</span>;<br>    <br>    <span class="hljs-keyword">if</span>(!<span class="hljs-built_in">strcmp</span>(str1,str2))<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;str1和str2相等\n&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;存在差异\n&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+
+<ul>
+<li>二维数组</li>
+<li>二维数组的定义</li>
+</ul>
+<p><img src="/../images/%E4%BA%8C%E4%BD%8D%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%891.png" alt="二位数组的定义1" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/%E4%BA%8C%E4%BD%8D%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%891.png" class="lozad post-image"></p>
+<p><img src="/../images/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E8%A1%A8%E7%8E%B0%E5%BD%A2%E5%BC%8F.png" alt="二维数组在内存中的表现形式" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E8%A1%A8%E7%8E%B0%E5%BD%A2%E5%BC%8F.png" class="lozad post-image"></p>
+<ul>
+<li><p>二维数组的访问</p>
+</li>
+<li><p>数组名【下标】【下标】 防止数组越界</p>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//二维数组的使用方法</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> a[<span class="hljs-number">3</span>][<span class="hljs-number">4</span>] = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>,<span class="hljs-number">12</span>&#125;;<br>    <span class="hljs-comment">//int a[3][4] = &#123;&#123;1,2,3,4&#125;,&#123;5,6,7,8&#125;,&#123;9,10,11,12&#125;;</span><br>    <span class="hljs-type">int</span> i,j;<br>    <br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">4</span>;j++)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,a[i][j]);<br>        &#125;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+</li>
+<li><p>指针</p>
+</li>
+<li><p>指针和指针变量  存放地址的变量</p>
+</li>
+<li><p>定义方法： 类型名 *指针变量名      </p>
+</li>
+<li><p>char *pa;   &#x2F;&#x2F;定义一个指向字符型的指针变量</p>
+</li>
+<li><p>int *pb;    &#x2F;&#x2F;定义一个指向整型的指针变量</p>
+</li>
+</ul>
+<p><img src="/../images/%E5%8F%96%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt="取地址运算符和取值运算符" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/../images/%E5%8F%96%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6.png" class="lozad post-image"></p>
+<ul>
+<li><p>指针的基本用法</p>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//指针的基本用法</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">char</span> a =<span class="hljs-string">&#x27;F&#x27;</span>;<br>    <span class="hljs-type">int</span> f = <span class="hljs-number">123</span>;<br>    <br>    <span class="hljs-type">char</span> *pa = &amp;a;<span class="hljs-comment">//a的地址存放在pa里面</span><br>    <span class="hljs-type">int</span> *pb = &amp;f;<br>    <br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c\n&quot;</span>,*pa); <span class="hljs-comment">//*pa 就是代表a的值   </span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,*pb);<br>    <br>    *pa = <span class="hljs-string">&#x27;C&#x27;</span>;<br>    *pb += <span class="hljs-number">1</span>;<br>    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;now,a= %c\n&quot;</span>,*pa); <span class="hljs-comment">//*pa 就是代表a的值   </span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;now,f= %d\n&quot;</span>,*pb);<br>    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;sizeof pa = %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(pa));<span class="hljs-comment">//查看有多少个字节</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;sizeof pb = %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(pb));<br>    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;the addr of a is : %p\n&quot;</span>,pa);<span class="hljs-comment">//查看地址</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;the addr of b is : %p\n&quot;</span>,pb);<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+</li>
+<li><p>避免访问未初始化的指针</p>
+</li>
+<li><p>指针和数组</p>
+</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//指针代表的含义</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> a;<br>    <span class="hljs-type">int</span> *p = &amp;a;<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;请输入一个数：&quot;</span>);<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;a);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;a = %d\n&quot;</span>,a);<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;请再输入一个整数：&quot;</span>);<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,p);<span class="hljs-comment">//p就代表a的地址  *p代表a的值</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;a = %d\n&quot;</span>,a);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre>
+
 
   </div>
   <div>
