@@ -45,7 +45,7 @@
         content="2022-07-13">
       <meta 
         property="og:article:modified_time" 
-        content="2022-09-22">
+        content="2022-09-26">
       <meta 
         property="og:article:author" 
         content="MuYue">
@@ -994,6 +994,12 @@
 
 <p>数组指针和二维数组</p>
   <pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-comment">//</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> i;<br>    <span class="hljs-type">int</span> arrary1[<span class="hljs-number">10</span>] = &#123;<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>&#125;;<br>    <span class="hljs-type">int</span> *p = arrary1;<br>    <br>    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,*(p+i));<br>    &#125;<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
+
+<p>常量和指针</p>
+<ul>
+<li>将变量变成常量 使用const函数</li>
+</ul>
+<pre class="highlight"><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">const</span> <span class="hljs-type">float</span> pi = <span class="hljs-number">3.14</span>;<br>    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%f\n&quot;</span>,pi);<br>    <br>    <br>   <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
 
 
   </div>
